@@ -6,6 +6,7 @@ import ForgotPassword from "../Auth/ForgotPassword";
 import MobileNumberLogin from "../Auth/MobileNumberLogin";
 import DefaultLayout from "../Layout/DefaultLayout";
 import Products from "../Component/Pages/Products/Products"
+import Payments from "../Component/Pages/payments/Index"
 import NotFound from "../Component/Pages/NotFound/NotFound";
 import ListYourProductIndex from "../Component/Pages/ListYourProduct/ListYourProductIndex";
 import ProductDetails from "../Component/Pages/Products/ProductDetails/ProductDetailsIndex";
@@ -45,6 +46,10 @@ const routes = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "payments",
+        element: <Payments />,
       },
       {
         path: "list-your-product",

@@ -8,7 +8,8 @@ const Sidebar = () => {
     { name: "My Products", path: "/products" },
     { name: "Add Product", path: "/list-your-product" },
     { name: "Orders History", path: "/orders-history" },
-    { name: "My Profile", path: "/profile" },
+    { name: "Payments", path: "/payments" },
+    { name: "Shop Details", path: "/profile" },
   ];
 
   const handleTabClick = (path: string) => {

@@ -5,6 +5,7 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 interface User {
   id: string;
   name: string;
+  shopName: string;
   email: string;
   phone: string;
   address: string;
@@ -88,11 +89,11 @@ const UserProfile: React.FC = () => {
     <div className="w-full flex flex-col items-center py-8">
       <div className="max-w-6xl w-full px-8">
         <div className="bg-white shadow-lg rounded-lg p-6">
-          <h2 className="text-3xl font-bold text-gray-900">My Profile</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Shop details</h2>
           <div className="mt-4 space-y-4">
             <div className="flex flex-col">
               <label className="text-gray-600">
-                <strong>Name:</strong>
+                <strong>Owner Name:</strong>
               </label>
               {isEditing ? (
                 <input
@@ -104,6 +105,22 @@ const UserProfile: React.FC = () => {
                 />
               ) : (
                 <p className="text-gray-700">{user.name}</p>
+              )}
+            </div>
+            <div className="flex flex-col">
+              <label className="text-gray-600">
+                <strong>Shop Name:</strong>
+              </label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  name="shopName"
+                  value={editData?.shopName}
+                  onChange={handleChange}
+                  className="border rounded p-2 w-full mt-2"
+                />
+              ) : (
+                <p className="text-gray-700">{user.shopName}</p>
               )}
             </div>
             <div className="flex flex-col">
@@ -159,7 +176,7 @@ const UserProfile: React.FC = () => {
               {loadingUpdate ? (
                 <span className="loader"></span>
               ) : (
-                isEditing ? "Cancel Edit" : "Edit Profile"
+                isEditing ? "Cancel Edit" : "Edit shop details"
               )}
             </button>
             {isEditing && (
@@ -171,7 +188,7 @@ const UserProfile: React.FC = () => {
                 {loadingUpdate ? (
                   <span className="loader"></span>
                 ) : (
-                  "Update Profile"
+                  "Update Shop Details"
                 )}
               </button>
             )}

@@ -187,7 +187,7 @@ const OrderList: React.FC = () => {
                       onClick={() => handleAccept(order.id)}
                       disabled={loadingId === order.id}
                     >
-                      {loadingId === order.id ? "Loading..." : "Deliver"}
+                      {loadingId === order.id ? "Loading..." : "Accept"}
                     </button>
                     <button
                       className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
