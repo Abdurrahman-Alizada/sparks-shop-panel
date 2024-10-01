@@ -9,6 +9,8 @@ interface User {
   email: string;
   phone: string;
   address: string;
+  longitude: string; // Added longitude field
+  latitude: string;  // Added latitude field
 }
 
 const UserProfile: React.FC = () => {
@@ -164,6 +166,38 @@ const UserProfile: React.FC = () => {
                 />
               ) : (
                 <p className="text-gray-700">{user.address}</p>
+              )}
+            </div>
+            <div className="flex flex-col">
+              <label className="text-gray-600">
+                <strong>Longitude:</strong>
+              </label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  name="longitude"
+                  value={editData?.longitude}
+                  onChange={handleChange}
+                  className="border rounded p-2 w-full mt-2"
+                />
+              ) : (
+                <p className="text-gray-700">{user.longitude}</p>
+              )}
+            </div>
+            <div className="flex flex-col">
+              <label className="text-gray-600">
+                <strong>Latitude:</strong>
+              </label>
+              {isEditing ? (
+                <input
+                  type="text"
+                  name="latitude"
+                  value={editData?.latitude}
+                  onChange={handleChange}
+                  className="border rounded p-2 w-full mt-2"
+                />
+              ) : (
+                <p className="text-gray-700">{user.latitude}</p>
               )}
             </div>
           </div>
